@@ -1,6 +1,6 @@
-# Vagrant Ubuntu 14.04 Puppet Nginx
+# Microservice authentication and authorisation example solution
 
-Simple example showing how to provision a Ubuntu 14.04 Nginx web server VM hosting a sample [AngularJS](https://angularjs.org/) application with [Dropwizard](https://dropwizard.github.io/dropwizard/) web service using [Vagrant](https://www.vagrantup.com/) and [Puppet](https://puppetlabs.com/).
+Example solution showing how to provision a Ubuntu 14.04 Nginx web server VM hosting a microservice authentication and authorisation solution built using an [AngularJS](https://angularjs.org/) web site with [Dropwizard](https://dropwizard.github.io/dropwizard/) applications acting as microservices and [Nginx](http://nginx.org/) with LUA scripts for web server and routing. Uses [Vagrant](https://www.vagrantup.com/) and [Puppet](https://puppetlabs.com/) to provision the VM.
 
 Created and tested on Mac OSX 10.9.5, Vagrant 1.6.3, VirtualBox 4.3.6, otherwise using versions/boxes given in VagrantFile and Puppet config.
 
@@ -8,8 +8,6 @@ Requires:
 
 * [Vagrant](https://www.vagrantup.com/)
 * [gradle](http://www.gradle.org/)
-
-This is meant as an example of how to use puppet to provision a web application using multiple components, with nginx handling routing. I plan on building this up into a fully fledged microservice solution.
 
 ## Start
 
@@ -86,8 +84,4 @@ Any change to the puppet files requires you to run 'vagrant provision' to update
 
 ## Possible improvements
 
-* Move the site content under src directory and build RPM with content instead of using explicit puppet module, that way site can be versioned and installed as RPM directly
-* Package Dropwizard Application as RPM and install using Puppet for versioning
-* HTTPS
-* Run node tests as part of gradle build using gradle plugin
-* I think the nginx config should not belong in site.pp, rather the module site_content or a different module
+* TODO
