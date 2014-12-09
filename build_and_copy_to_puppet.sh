@@ -1,1 +1,0 @@
-gradle clean oneJar copyOneJarToPuppet
