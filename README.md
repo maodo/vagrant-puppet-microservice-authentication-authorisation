@@ -13,7 +13,7 @@ Requires:
 
 ```
 # Get JS and CSS library resources (AngularJS and Bootstrap) for the site
-# using npm and bower and compiles the Dropwizard Application as a fat jar
+# using npm and bower and compiles the Dropwizard Applications as fat jars
 ./update_dependencies.sh
 
 # Starts up VM and runs puppet to setup, downloading box if necessary

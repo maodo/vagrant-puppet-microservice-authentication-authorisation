@@ -1,5 +1,4 @@
-cd puppet/modules/site_content/files
-cp dev-config.js app/js/config.js
+cd frontend
 npm install
-echo 'Requires local running instance of site'
+echo 'Requires running instance of solution'
 npm run protractor
