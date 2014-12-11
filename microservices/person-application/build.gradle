@@ -2,12 +2,15 @@
 project.ext {
     dropwizardVersion = '0.7.1'
     jerseyVersion = '1.18.1'
+    h2Version = '1.4.181'
 }
 
 dependencies {
     compile (
         'io.dropwizard:dropwizard-core:' + dropwizardVersion,
-        'com.sun.jersey:jersey-core:' + jerseyVersion
+        'io.dropwizard:dropwizard-jdbi:' + dropwizardVersion,
+        'com.sun.jersey:jersey-core:' + jerseyVersion,
+        'com.h2database:h2:' + h2Version
     )
     testCompile (
         'io.dropwizard:dropwizard-testing:' + dropwizardVersion,

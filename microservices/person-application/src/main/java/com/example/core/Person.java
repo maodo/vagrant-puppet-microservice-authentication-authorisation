@@ -14,12 +14,6 @@ public class Person {
     @JsonProperty
     private String name;
 
-    @JsonProperty
-    private String email;
-
-    @JsonProperty
-    private Integer age;
-
     public Integer getId() {
         return id;
     }
@@ -38,24 +32,6 @@ public class Person {
         return this;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public Person setEmail(String email) {
-        this.email = email;
-        return this;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public Person setAge(Integer age) {
-        this.age = age;
-        return this;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -65,8 +41,6 @@ public class Person {
 
         if (!getId().equals(that.getId())) return false;
         if (!getName().equals(that.getName())) return false;
-        if (!getEmail().equals(that.getEmail())) return false;
-        if (!getAge().equals(that.getAge())) return false;
 
         return true;
     }
