@@ -1,4 +1,4 @@
-include dropwizard_service
+###include dropwizard_service
 
 class { "java":
   package => "openjdk-7-jre",
