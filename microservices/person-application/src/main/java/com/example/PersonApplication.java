@@ -8,9 +8,9 @@ import io.dropwizard.setup.Environment;
 import io.dropwizard.jdbi.DBIFactory;
 import org.skife.jdbi.v2.DBI;
 
-public class ExampleApplication extends Application<ExampleConfiguration> {
+public class PersonApplication extends Application<PersonConfiguration> {
     public static void main(String[] args) throws Exception {
-        new ExampleApplication().run(args);
+        new PersonApplication().run(args);
     }
 
     @Override
@@ -19,11 +19,11 @@ public class ExampleApplication extends Application<ExampleConfiguration> {
     }
 
     @Override
-    public void initialize(Bootstrap<ExampleConfiguration> bootstrap) {
+    public void initialize(Bootstrap<PersonConfiguration> bootstrap) {
     }
 
     @Override
-    public void run(ExampleConfiguration configuration, Environment environment) throws ClassNotFoundException {
+    public void run(PersonConfiguration configuration, Environment environment) throws ClassNotFoundException {
         final DBIFactory factory = new DBIFactory();
         final DBI jdbi = factory.build(environment, configuration.getDataSourceFactory(), "h2");
 
