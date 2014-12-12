@@ -16,11 +16,15 @@ app.config(['$routeProvider',
         templateUrl: 'partials/persons.html',
         controller: 'personsCtrl'
       }).
-      when('/persons/:personId', {
+      when('/persons/:id', {
         templateUrl: 'partials/person.html',
+        controller: 'personCtrl'
+      }).
+      when('/persons/:id/edit', {
+        templateUrl: 'partials/person-edit.html',
         controller: 'personCtrl'
       }).
       otherwise({
         redirectTo: '/persons'
-      });
+      });  
   }]);
