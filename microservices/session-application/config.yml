@@ -4,7 +4,7 @@ server:
   adminContextPath: /admin
   connector:
     type: http
-    port: 8195
+    port: 8150
 
 database:
   driverClass: org.h2.Driver
