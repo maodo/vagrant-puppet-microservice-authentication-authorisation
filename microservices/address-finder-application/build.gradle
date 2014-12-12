@@ -1,0 +1,19 @@
+// Set our project variables
+project.ext {
+    dropwizardVersion = '0.7.1'
+    jerseyVersion = '1.18.1'
+}
+
+dependencies {
+    compile (
+        'io.dropwizard:dropwizard-core:' + dropwizardVersion,
+        'io.dropwizard:dropwizard-jdbi:' + dropwizardVersion,
+        'com.sun.jersey:jersey-core:' + jerseyVersion
+    )
+    testCompile (
+        'io.dropwizard:dropwizard-testing:' + dropwizardVersion,
+        'com.sun.jersey:jersey-client:' + jerseyVersion,
+        'com.sun.jersey.jersey-test-framework:jersey-test-framework-core:' + jerseyVersion,
+        'com.sun.jersey.jersey-test-framework:jersey-test-framework-inmemory:' + jerseyVersion
+    )
+}

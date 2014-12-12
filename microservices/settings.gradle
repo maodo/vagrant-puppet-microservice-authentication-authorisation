@@ -1,1 +1,1 @@
-include "person-application", "session-application"
+include "address-finder-application", "person-application", "session-application"
