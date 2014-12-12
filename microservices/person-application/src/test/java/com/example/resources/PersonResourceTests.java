@@ -18,9 +18,6 @@ import java.util.logging.Logger;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
-/**
- * Tests {@link io.dropwizard.testing.junit.ResourceTestRule}
- */
 public class PersonResourceTests {
 
     private static final PersonDAO personDAO = mock(PersonDAO.class);
@@ -41,7 +38,7 @@ public class PersonResourceTests {
         persons.add(new Person().setId(2).setName("person2"));
         when(personDAO.getAll()).thenReturn(persons);
 
-        List<Person> result = resources.client().resource("/person").get(new GenericType<List<Person>>() {});
+        List<Person> result = resources.client().resource("/persons").get(new GenericType<List<Person>>() {});
 
         assertEquals(2, result.size());
         assertEquals("person1", result.get(0).getName());
@@ -55,7 +52,7 @@ public class PersonResourceTests {
                         .setName("person1")
         );
 
-        Person person = resources.client().resource("/person/1").get(Person.class);
+        Person person = resources.client().resource("/persons/1").get(Person.class);
 
         assertEquals("person1", person.getName());
     }
@@ -64,7 +61,7 @@ public class PersonResourceTests {
     public void update() throws Exception {
         Person person = PersonTests.getPerson();
 
-        Person updatedPerson = resources.client().resource("/person/10")
+        Person updatedPerson = resources.client().resource("/persons/10")
                 .type(MediaType.APPLICATION_JSON)
                 .put(Person.class, person);
 
@@ -77,7 +74,7 @@ public class PersonResourceTests {
     public void update_invalid_person() throws Exception {
         Person person = PersonTests.getPerson().setName(null);
 
-        Person updatedPerson = resources.client().resource("/person/10")
+        Person updatedPerson = resources.client().resource("/persons/10")
                 .type(MediaType.APPLICATION_JSON)
                 .put(Person.class, person);
     }
@@ -86,7 +83,7 @@ public class PersonResourceTests {
     public void add() throws Exception {
         Person newPerson = PersonTests.getPerson();
 
-        Person person = resources.client().resource("/person")
+        Person person = resources.client().resource("/persons")
                 .type(MediaType.APPLICATION_JSON)
                 .post(Person.class, newPerson);
 
@@ -98,14 +95,14 @@ public class PersonResourceTests {
     public void add_invalid_person() throws Exception {
         Person newPerson = PersonTests.getPerson().setName(null);
 
-        Person person = resources.client().resource("/person")
+        Person person = resources.client().resource("/persons")
                 .type(MediaType.APPLICATION_JSON)
                 .post(Person.class, newPerson);
     }
 
     @Test()
     public void delete() throws Exception {
-        resources.client().resource("/person/1").delete();
+        resources.client().resource("/persons/1").delete();
         verify(personDAO, times(1)).deleteById(1);
     }
 }

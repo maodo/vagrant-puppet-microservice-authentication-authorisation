@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.core.Person;
 import com.example.dao.PersonDAO;
 import com.example.resources.PersonResource;
 import io.dropwizard.Application;
@@ -28,8 +29,21 @@ public class PersonApplication extends Application<PersonConfiguration> {
         final DBI jdbi = factory.build(environment, configuration.getDataSourceFactory(), "h2");
 
         final PersonDAO personDAO = jdbi.onDemand(PersonDAO.class);
+        setupDB(personDAO);
+
         final PersonResource personResource = new PersonResource(personDAO);
 
         environment.jersey().register(personResource);
+    }
+
+    private void setupDB(PersonDAO personDAO) {
+        try {
+            personDAO.createTable();
+            personDAO.insertTestData();
+        } catch (Exception ex) {
+            if (!ex.getMessage().contains("Table \"PERSON\" already exists")) {
+                throw ex;
+           }
+        }
     }
 }

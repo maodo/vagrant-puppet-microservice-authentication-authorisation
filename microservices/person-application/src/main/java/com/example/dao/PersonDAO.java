@@ -13,6 +13,13 @@ import java.util.List;
 @RegisterMapper(PersonMapper.class)
 public interface PersonDAO {
 
+    @SqlUpdate("create table PERSON (ID int not null, NAME varchar(100) not null)")
+    void createTable();
+
+    @SqlUpdate("insert into PERSON (ID, NAME) values (1, 'John Doe'); " +
+               "insert into PERSON (ID, NAME) values (2, 'Jane Doe')")
+    void insertTestData();
+
     @SqlQuery("select * from PERSON")
     List<Person> getAll();
 
