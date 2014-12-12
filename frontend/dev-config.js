@@ -4,4 +4,5 @@
 
 var appConfig = angular.module('appConfig', []);
 
-appConfig.serviceUrl = "http://localhost:8095/api/person";
+appConfig.addressFinderServiceUrl = "http://localhost:8110/api/addresses";
+appConfig.personServiceUrl = "http://localhost:8140/api/persons";
