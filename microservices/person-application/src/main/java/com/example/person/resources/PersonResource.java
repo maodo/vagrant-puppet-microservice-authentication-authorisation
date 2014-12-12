@@ -32,9 +32,9 @@ public class PersonResource {
 
     @POST
     public Person add(@Valid Person person) {
-        int newId = personDAO.insert(person);
+        personDAO.insert(person);
 
-        return person.setId(newId);
+        return person;
     }
 
     @PUT

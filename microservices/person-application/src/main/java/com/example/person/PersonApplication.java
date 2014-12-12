@@ -23,7 +23,7 @@ public class PersonApplication extends Application<PersonConfiguration> {
     }
 
     @Override
-    public void run(PersonConfiguration configuration, Environment environment) throws ClassNotFoundException {
+    public void run(PersonConfiguration configuration, Environment environment) throws Exception {
         final DBIFactory factory = new DBIFactory();
         final DBI jdbi = factory.build(environment, configuration.getDataSourceFactory(), "h2");
 
@@ -35,7 +35,7 @@ public class PersonApplication extends Application<PersonConfiguration> {
         environment.jersey().register(personResource);
     }
 
-    private void setupDB(PersonDAO personDAO) {
+    private void setupDB(PersonDAO personDAO) throws Exception {
         try {
             personDAO.createTable();
             personDAO.insertTestData();

@@ -1,1 +1,1 @@
-include "person-application"
+include "person-application", "session-application"
