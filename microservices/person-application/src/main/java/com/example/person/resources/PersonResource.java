@@ -1,7 +1,7 @@
-package com.example.resources;
+package com.example.person.resources;
 
-import com.example.core.Person;
-import com.example.dao.PersonDAO;
+import com.example.person.core.Person;
+import com.example.person.dao.PersonDAO;
 
 import javax.validation.Valid;
 import javax.ws.rs.*;

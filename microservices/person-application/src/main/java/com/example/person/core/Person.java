@@ -1,4 +1,4 @@
-package com.example.core;
+package com.example.person.core;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

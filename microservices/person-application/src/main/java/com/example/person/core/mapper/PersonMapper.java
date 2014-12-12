@@ -1,6 +1,6 @@
-package com.example.core.mapper;
+package com.example.person.core.mapper;
 
-import com.example.core.Person;
+import com.example.person.core.Person;
 import org.skife.jdbi.v2.StatementContext;
 import org.skife.jdbi.v2.tweak.ResultSetMapper;
 

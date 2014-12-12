@@ -1,8 +1,7 @@
-package com.example;
+package com.example.person;
 
-import com.example.core.Person;
-import com.example.dao.PersonDAO;
-import com.example.resources.PersonResource;
+import com.example.person.dao.PersonDAO;
+import com.example.person.resources.PersonResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
@@ -16,7 +15,7 @@ public class PersonApplication extends Application<PersonConfiguration> {
 
     @Override
     public String getName() {
-        return "dropwizard-jdbi";
+        return "person-application";
     }
 
     @Override

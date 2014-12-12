@@ -1,8 +1,8 @@
-package com.example.resources;
+package com.example.person.resources;
 
-import com.example.core.Person;
-import com.example.core.PersonTests;
-import com.example.dao.PersonDAO;
+import com.example.person.core.Person;
+import com.example.person.core.PersonTests;
+import com.example.person.dao.PersonDAO;
 import com.sun.jersey.api.client.GenericType;
 import io.dropwizard.testing.junit.ResourceTestRule;
 import org.junit.ClassRule;
